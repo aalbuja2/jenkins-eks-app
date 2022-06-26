@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: jenkins-eks-app
-          image: 450280157612.dkr.ecr.us-east-1.amazonaws.com/rep-imagenes:latest
+          image: 450280157612.dkr.ecr.us-east-1.amazonaws.com/jenkins-eks-app:latest
           ports:
             - containerPort: 80
               protocol: TCP
