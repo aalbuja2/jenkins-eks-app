@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-eks-app
+  namespace: actividad
   labels:
     app: jenkins-eks-app
 spec:
@@ -22,6 +23,4 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
-          imagePullPolicy: Always
-      imagePullSecrets:
-      - name: $CONFIG_KUBERNETES
+          imagePullPolicy: IfNotPresent
