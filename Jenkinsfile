@@ -1,5 +1,5 @@
 pipeline {
-    agent UnirCluster
+    agent any
     options {
         skipStagesAfterUnstable()
     }
