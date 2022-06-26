@@ -15,7 +15,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script{
-                 app = docker.build("eks")
+                 app = docker.build("rep-imagenes")
                 }
             }
         }
