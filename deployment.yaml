@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-        app: jenkins-eks-app
+      app: jenkins-eks-app
   replicas: 3
   strategy:
     type: RollingUpdate
@@ -19,8 +19,14 @@ spec:
     spec:
       containers:
         - name: jenkins-eks-app
-          image:  450280157612.dkr.ecr.us-east-1.amazonaws.com/rep-imagenes:latest
+          image: 450280157612.dkr.ecr.us-east-1.amazonaws.com/rep-imagenes:latest
           ports:
             - containerPort: 80
               protocol: TCP
-          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: '64Mi'
+              cpu: '100m'
+            limits:
+              memory: '128Mi'
+              cpu: '500m'
